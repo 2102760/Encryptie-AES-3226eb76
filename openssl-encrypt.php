@@ -1,8 +1,8 @@
 <?php
 
-$plaintext = "Hallo";
+$plaintext = $argv[1];
 $cipher = "aes-128-gcm";
-$key = "afs";
+$key = $argv[2];
 $ivlen = openssl_cipher_iv_length($cipher);
 $iv = openssl_random_pseudo_bytes($ivlen);
 $encrypt = openssl_encrypt($plaintext, $cipher, $key, $options = 0, $iv, $tag);
